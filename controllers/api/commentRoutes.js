@@ -3,12 +3,12 @@ const { Comment, User, Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Create a new comment attached to a post
-router.post('/', withAuth, async (req, res) => {
+router.post('/:id/comments', withAuth, async (req, res) => {
   try {
     const newCommentData = await Comment.create({
-      text: req.body.text,
+      content: req.body.text,
       user_id: req.session.user_id,
-      post_id: req.body.post_id,
+      post_id: req.params.id
     });
 
     res.status(201).json(newCommentData);
@@ -23,7 +23,7 @@ router.put('/:id', withAuth, async (req, res) => {
   try {
     const updatedCommentData = await Comment.update(
       {
-        text: req.body.text,
+        content: req.body.text,
       },
       {
         where: {

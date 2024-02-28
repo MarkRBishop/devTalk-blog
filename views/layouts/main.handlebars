@@ -13,15 +13,17 @@
 <body>
   <div class="container-fluid">
     <header class="d-flex justify-content-between align-items-center p-2">
-      <h1 class="text-dark">devTalk</h1>
+      <h1 class="text-dark devTalk">
+        <span class="dev">dev</span><span class="talk">Talk</span>
+      </h1>
       <nav>
         <ul class="list-inline">
-          <li class="list-inline-item"><a href="/" class="text-dark">Home</a></li>
-          <li class="list-inline-item"><a href="/" class="text-dark">Dashboard</a></li>
+          <li class="list-inline-item"><a href="/">Home</a></li>
+          <li class="list-inline-item"><a href="/profile">Dashboard</a></li>
           {{#if logged_in}}
-          <li id="logout-button" class="list-inline-item"><a href="/" class="text-dark">Logout</a></li>
+          <li id="logout-button" class="list-inline-item"><a href="/">Logout</a></li>
           {{else}}
-          <li class="list-inline-item"><a href="/login" class="text-dark">Login/Sign Up</a></li>
+          <li class="list-inline-item"><a href="/login">Login/Sign Up</a></li>
           {{/if}}
         </ul>
       </nav>

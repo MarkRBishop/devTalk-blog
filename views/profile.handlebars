@@ -1,7 +1,56 @@
-<!-- views/profile.handlebars -->
+<div class="profile-section text-center">
+    <h2>Welcome to your profile, {{username}}!</h2>
+    <p>Email: {{email}}</p>
+    <p>Joined on: {{format_date createdAt}}</p>
 
-<section class="profile-section">
-  <h2>Welcome to your profile, {{username}}!</h2>
-  <p>Email: {{email}}</p>
-  <!-- Add more details as needed -->
-</section>
+    <div class="post-section">
+        <h3>Create a New Post</h3>
+        <form id="post-form" class="mb-4">
+            <div class="mb-3 row">
+                <div class="col-md-6 offset-md-3">
+                    <input type="text" id="post-title" class="form-control" placeholder="Enter the title">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col-md-6 offset-md-3">
+                    <textarea id="post-text" class="form-control" rows="4" placeholder="Write your post..."></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <button type="submit" class="btn btn-primary">Post</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="posts">
+        <h3>Your Posts</h3>
+        {{#each posts}}
+            <div class="post mb-4 p-3 bg-light col-md-6 offset-md-3">
+                <h3>{{title}}</h3>
+                <p>{{content}}</p>
+                <p class="text-muted">Posted on: {{format_date created_at}}</p>
+                
+                <!-- Comment Form -->
+                <form class="comment-form mb-3 col-md-8 offset-md-2">
+                    <div class="mb-2">
+                        <textarea class="form-control comment-textarea" rows="2" placeholder="Write your comment..."></textarea>
+                    </div>
+                    <button class="btn btn-secondary comment-button" data-postid="{{this.id}}">Comment</button>
+                </form>
+                
+                <!-- Display Comments -->
+                <div class="comments">
+                    {{#each comments}}
+                        <p>{{this.content}}</p>
+                        <p class="text-muted">Commented by {{user.username}} on {{format_date this.created_at}}</p>
+                    {{/each}}
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="/js/profile.js"></script>
+<script src ="/js/comment.js"></script>

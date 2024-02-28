@@ -1,0 +1,77 @@
+/* /css/style.css */
+
+.devTalk {
+    font-size: 3em; /* Adjust the font size as needed */
+  }
+  
+
+.devTalk .dev{
+  color: #4CAF50; /* Green color for 'dev' */
+}
+
+.devTalk .dev:hover {
+  color: #45a049; /* Darker green color on 'dev' hover */
+}
+
+.devTalk .talk {
+  color: #2196F3; /* Blue color for 'talk' */
+}
+
+.devTalk .talk:hover {
+  color: #1e87f0; /* Darker blue color on 'talk' hover */
+}
+header {
+    background-color: #2e7d32; /* Dark green color for navbar */
+    color: #004d40; /* Dark green color for header text */
+    padding: 10px; /* Add padding for better spacing */
+  }
+  
+  body {
+    background-color: #fff3e0; /* Cream color for body background */
+  }
+  
+  h1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #004d40; /* Dark green color for header text */
+  }
+  
+  .list-inline-item a {
+    font-size: 2em;
+    color: #4CAF50; /* Dark green color for header links */
+    text-decoration: none;
+  }
+  
+  .list-inline-item a:hover {
+    color: #00251a; /* Darker green color on header link hover */
+  }
+  
+  .btn-primary {
+    background-color: #004d40; /* Dark green color for primary buttons */
+    border-color: #004d40; /* Dark green color for button borders */
+  }
+  
+  .btn-primary:hover {
+    background-color: #00251a; /* Darker green color on button hover */
+    border-color: #00251a; /* Darker green color for button borders on hover */
+  }
+  
+  .btn-secondary {
+    background-color: #2e7d32; /* Darker shade of green for secondary buttons */
+    border-color: #2e7d32; /* Darker shade of green for button borders */
+  }
+  
+  .btn-secondary:hover {
+    background-color: #1b5e20; /* Darker green color on secondary button hover */
+    border-color: #1b5e20; /* Darker green color for button borders on hover */
+  }
+  
+  .form-input {
+    background-color: #c8e6c9; /* Light green color for input fields */
+  }
+  
+  .comment-form,
+  .comment {
+    background-color: #c8e6c9; /* Light green color for comment boxes */
+  }

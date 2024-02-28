@@ -1,34 +1,47 @@
-<section class="my-4">
+<div class="my-4">
     {{#if logged_in}}
-      {{#if posts.length}}
-        <div class="posts-section">
-          {{#each posts}}
-            <article class="post border p-3 mb-3 bg-white rounded">
-              <h2>{{title}}</h2>
-              <p>{{content}}</p>
-              <p class="text-muted">Posted by {{user.username}} on {{format_date created_at}}</p>
-              {{#if comments.length}}
-                <ul class="comments-list list-unstyled">
-                  {{#each comments}}
-                    <li class="comment border p-2 mb-2 bg-light rounded">
-                      <p>{{content}}</p>
-                      <p class="text-muted">Commented by {{user.username}} on {{format_date created_at}}</p>
-                    </li>
-                  {{/each}}
-                </ul>
-              {{else}}
-                <p class="text-muted">No comments yet.</p>
-              {{/if}}
-            </article>
-          {{/each}}
-        </div>
-      {{else}}
-        <p class="text-muted">No posts yet.</p>
-      {{/if}}
+        {{#if posts.length}}
+            <div class="posts-section">
+                {{#each posts}}
+                    <article class="post border p-3 mb-3 bg-white rounded col-md-6 offset-md-3">
+                        <h2>{{title}}</h2>
+                        <p>{{content}}</p>
+                        <p class="text-muted">Posted by {{user.username}} on {{format_date created_at}}</p>
+
+                        <!-- Comment Form -->
+                        <form class="comment-form mb-3 col-md-8 offset-md-2">
+                            <div class="mb-2">
+                                <textarea class="form-control comment-textarea" rows="2"
+                                          placeholder="Write your comment..."></textarea>
+                            </div>
+                            <button class="btn btn-secondary comment-button col-md-4 offset-md-4" data-postid="{{this.id}}">Comment
+                            </button>
+                        </form>
+
+                        {{#if comments.length}}
+                            <ul class="comments-list list-unstyled">
+                                {{#each comments}}
+                                    <li class="comment border p-2 mb-2 bg-light rounded">
+                                        <p>{{content}}</p>
+                                        <p class="text-muted">Commented by {{user.username}} on {{format_date created_at}}</p>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        {{else}}
+                            <p class="text-muted">No comments yet.</p>
+                        {{/if}}
+                    </article>
+                {{/each}}
+            </div>
+        {{else}}
+            <p class="text-muted">No posts yet.</p>
+        {{/if}}
     {{else}}
-      <section class="welcome-section bg-white p-3 rounded">
-        <h2 class="text-center">Welcome to devTalk!</h2>
-        <p class="text-center">Where developers discuss all things Tech.</p>
-      </section>
+        <div class="welcome-section bg-white p-3 rounded">
+            <h2 class="text-center">Welcome to devTalk!</h2>
+            <p class="text-center">Where developers discuss all things Tech.</p>
+        </div>
     {{/if}}
-  </section>
+</div>
+
+<script src ="/js/comment.js"></script>

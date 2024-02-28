@@ -1,4 +1,4 @@
-<section class="my-4">
+<div class="my-4">
     {{#if loggedIn}}
         {{#each posts}}
             <article class="post border p-3 mb-3 bg-white rounded">
@@ -20,9 +20,9 @@
             </article>
         {{/each}}
     {{else}}
-        <section class="welcome-section bg-white p-3 rounded">
+        <div class="welcome-section bg-white p-3 rounded">
             <h2 class="text-center">Welcome to devTalk!</h2>
             <p class="text-center">Where developers discuss all things Tech.</p>
-        </section>
+        </div>
     {{/if}}
-</section>
+</div>
