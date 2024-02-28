@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
           if (response.ok) {
             // Redirect or perform actions after successful logout
-            window.location.replace("/");
+            window.location.href = "/" ;
           } else {
             // Handle logout error
             alert("Error logging out");

@@ -76,5 +76,16 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    // Destroy the session
+    req.session.destroy(() => {
+      console.log("Session destroyed")
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 module.exports = router;

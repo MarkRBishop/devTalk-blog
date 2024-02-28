@@ -17,9 +17,9 @@
       <nav>
         <ul class="list-inline">
           <li class="list-inline-item"><a href="/" class="text-dark">Home</a></li>
-          <li class="list-inline-item"><a href="/dashboard" class="text-dark">Dashboard</a></li>
+          <li class="list-inline-item"><a href="/" class="text-dark">Dashboard</a></li>
           {{#if logged_in}}
-          <li class="list-inline-item"><a href="/logout" class="text-dark">Logout</a></li>
+          <li id="logout-button" class="list-inline-item"><a href="/" class="text-dark">Logout</a></li>
           {{else}}
           <li class="list-inline-item"><a href="/login" class="text-dark">Login/Sign Up</a></li>
           {{/if}}
