@@ -6,6 +6,7 @@ const exphbs = require('express-handlebars')
 const routes = require('./controllers');
 const helpers = require('./utils/helpers')
 const sequelize = require('./config/connection');
+const { error } = require('console');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -47,4 +48,7 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
   });
-});
+})
+.catch((error) => {
+  console.error('Sequelize sunc Error:', error)
+})
