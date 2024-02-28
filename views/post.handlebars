@@ -1,0 +1,28 @@
+<section class="my-4">
+    {{#if loggedIn}}
+        {{#each posts}}
+            <article class="post border p-3 mb-3 bg-white rounded">
+                <h2>{{title}}</h2>
+                <p>{{content}}</p>
+                <p class="text-muted">Posted by {{user.username}} on {{format_date created_at}}</p>
+                {{#if comments.length}}
+                    <ul class="comments-list list-unstyled">
+                        {{#each comments}}
+                            <li class="comment border p-2 mb-2 bg-light rounded">
+                                <p>{{content}}</p>
+                                <p class="text-muted">Commented by {{user.username}} on {{format_date created_at}}</p>
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{else}}
+                    <p class="text-muted">No comments yet.</p>
+                {{/if}}
+            </article>
+        {{/each}}
+    {{else}}
+        <section class="welcome-section bg-white p-3 rounded">
+            <h2 class="text-center">Welcome to devTalk!</h2>
+            <p class="text-center">Where developers discuss all things Tech.</p>
+        </section>
+    {{/if}}
+</section>

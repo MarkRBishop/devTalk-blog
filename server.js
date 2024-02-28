@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Session middleware
 app.use(session({
-  secret: proces.env.SESSION_SECRET,
+  secret: process.env.SESSION_SECRET,
   cookie: {
     maxAge:600000,
     httpOnly: true,
