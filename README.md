@@ -50,6 +50,5 @@ https://github.com/MarkRBishop/devTalk-blog
 
 Link to the hosted site
 
-https://markrbishop.github.io/devTalk-blog/
-
+https://devtalk-blog-9a1c063b54af.herokuapp.com
 
